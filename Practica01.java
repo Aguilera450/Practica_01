@@ -38,12 +38,12 @@ public class Practica01{
 	result[1] = -1;
 	
 	int j = num.length -1;
-	for(int i = 0; i < num.length ; i++)
-	    if(num[i] == value && result[0] == -1){
+	for(int i = 0; i < num.length ; i++){
+	    if(num[i] == value && result[0] == -1)
 	 	result[0] = i;
-	    } else if(num[j] == value && result[1] == -1){
+	    if(num[j] == value && result[1] == -1)
 		result[1] = j;
-	    }
+	}
 		
 	return result;
     }
