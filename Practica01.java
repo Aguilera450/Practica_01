@@ -38,13 +38,29 @@ public class Practica01{
 	result[1] = -1;
 	
 	int j = num.length -1;
-	for(int i = 0; i < num.length ; i++){
-	    if(num[i] == value && result[0] == -1)
-	 	result[0] = i;
-	    if(num[j--] == value && result[1] == -1)
-		result[1] = j +1;
+	if(num.length%2 == 0)
+	    for(int i = 0; i < num.length/2 ; i++){
+		if(num[i] == value && result[0] == -1)
+		    result[0] = i;
+		if(num[j--] == value && result[1] == -1)
+		    result[1] = j +1;
+	    }
+	else{
+	    j = num.length -2;
+	    for(int i = 0; i < num.length/2 ; i++){
+		if(num[i] == value && result[0] == -1)
+		    result[0] = i;
+		if(num[j--] == value && result[1] == -1)
+		    result[1] = j +1;
+	    }
+	    if(num[num.length -1] == value)
+		result[1] = num.length -1;
 	}
-		
+	if(result[0] == -1 && result[1] != -1)
+	    result[0] = result[1];
+	else if(result[0] != -1 && result[1] == -1)
+	    result[1] = result[0];
+	
 	return result;
     }
     
