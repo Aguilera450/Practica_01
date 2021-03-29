@@ -41,8 +41,8 @@ public class Practica01{
 	for(int i = 0; i < num.length ; i++){
 	    if(num[i] == value && result[0] == -1)
 	 	result[0] = i;
-	    if(num[j] == value && result[1] == -1)
-		result[1] = j;
+	    if(num[j--] == value && result[1] == -1)
+		result[1] = j +1;
 	}
 		
 	return result;
